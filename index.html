@@ -13,6 +13,7 @@
       --muted:#666666;
       --line:#e8e8e8;
       --max:980px;
+      --orcid:#A6CE39; /* ORCID green */
     }
     *{ box-sizing:border-box; }
     html,body{ margin:0; padding:0; }
@@ -30,6 +31,7 @@
       position:sticky;
       top:0;
       background:rgba(255,255,255,0.95);
+      backdrop-filter:saturate(180%) blur(6px);
     }
     .nav{
       max-width:var(--max);
@@ -72,7 +74,6 @@
       letter-spacing:0.08em;
     }
 
-    /* ↓ Main title slightly smaller */
     h1{
       font-size:30px;
       line-height:1.2;
@@ -80,7 +81,7 @@
       max-width:85ch;
     }
 
-    /* ↓ Lead text same size as other text */
+    /* Lead text same size as other text */
     .lead{
       font-size:16px;
       color:var(--muted);
@@ -98,6 +99,7 @@
       border:1px solid var(--line);
       border-radius:14px;
       padding:16px;
+      background:#fff;
     }
     .card h2{
       font-size:16px;
@@ -148,6 +150,40 @@
       border-top:1px solid var(--line);
       color:var(--muted);
       font-size:14px;
+    }
+
+    .contributors-list{
+      margin:10px 0 0 18px;
+      padding:0;
+      color:var(--muted);
+    }
+
+    .contributors-list li{
+      margin:8px 0;
+      line-height:1.45;
+    }
+
+    .orcid-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      margin-left:10px;
+      text-decoration:none;
+      color:var(--muted);
+      border-bottom:1px solid transparent;
+    }
+
+    .orcid-link:hover{
+      color:var(--fg);
+      border-bottom-color:var(--line);
+    }
+
+    .orcid-icon{
+      width:16px;
+      height:16px;
+      display:inline-block;
+      flex:0 0 auto;
+      vertical-align:middle;
     }
 
     @media (max-width: 860px){
@@ -224,10 +260,10 @@
       <img src="mechanistical_background.png"
            alt="Mechanistic background linking subarachnoid haemorrhage, haemoglobin delocalization, nitric oxide depletion, and secondary brain injury">
       <figcaption>
-        Mechanistic background of haemoglobin driven pathophysiology after aneurysmal subarachnoid haemorrhage,
-        illustrating erythrolysis, delocalizationhaemoglobin delocalization, heme release, nitric oxide depletion,
+        Mechanistic background of haemoglobin delocalization after aneurysmal subarachnoid haemorrhage,
+        illustrating erythrolysis, haemoglobin diffusion, heme release, nitric oxide depletion,
         and downstream pathways contributing to secondary brain injury.
-        Adapted from: <a href="https://doi.org/10.1186/s12883-022-02789-w">https://doi.org/10.1186/s12883-022-02789-w</a>
+        Source: <a href="https://doi.org/10.1186/s12883-022-02789-w">https://doi.org/10.1186/s12883-022-02789-w</a>
       </figcaption>
     </figure>
   </section>
@@ -242,15 +278,15 @@
         </a>
       </li>
     </ul>
-    <p class="small">
-      Institutional affiliations and participating centres are maintained via ROR records.
-    </p>
   </section>
 
   <section id="contributors" class="section">
     <h2>Contributors</h2>
     <p class="small">Loaded from a machine-readable CSV.</p>
-    <ul id="contributors-list"></ul>
+
+    <!-- Back to bullet list -->
+    <ul id="contributors-list" class="contributors-list"></ul>
+
     <p class="small" id="contributors-error" style="display:none;"></p>
   </section>
 </main>
@@ -300,6 +336,15 @@
     return m ? m[1] : "";
   }
 
+  function makeOrcidIconSVG() {
+    return `
+      <svg class="orcid-icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+        <circle cx="128" cy="128" r="128" fill="var(--orcid)"></circle>
+        <path fill="#ffffff" d="M86 66c0 8-6 14-14 14s-14-6-14-14 6-14 14-14 14 6 14 14zm-26 124V92h24v98H60zm44-98h40c34 0 58 22 58 49s-24 49-58 49h-40V92zm24 78h14c20 0 33-12 33-29s-13-29-33-29h-14v58z"></path>
+      </svg>
+    `;
+  }
+
   (async () => {
     try {
       const text = await loadContributorsCSV("contributors.csv");
@@ -307,28 +352,39 @@
       const header = rows[0].map(h => h.trim().toLowerCase());
       const idx = {
         name: header.indexOf("name"),
-        orcid: header.indexOf("orcid"),
-        role: header.indexOf("role")
+        orcid: header.indexOf("orcid")
+        // role intentionally ignored
       };
 
       const ul = document.getElementById("contributors-list");
 
-      rows.slice(1).forEach(r => {
-        const li = document.createElement("li");
+      // Keep alphabetical sorting (remove this sort if you prefer CSV order)
+      const data = rows.slice(1).sort((a,b) => {
+        const na = (a[idx.name] || "").toLowerCase();
+        const nb = (b[idx.name] || "").toLowerCase();
+        return na.localeCompare(nb);
+      });
+
+      data.forEach(r => {
         const name = r[idx.name]?.trim() || "—";
-        const role = r[idx.role]?.trim();
         const orcid = normalizeOrcid(r[idx.orcid]);
 
-        li.append(`${name}${role ? " — " + role : ""}`);
+        const li = document.createElement("li");
+        li.textContent = name;
+
         if (orcid) {
-          li.append(" — ");
           const a = document.createElement("a");
+          a.className = "orcid-link";
           a.href = `https://orcid.org/${orcid}`;
-          a.textContent = `ORCID: ${orcid}`;
           a.target = "_blank";
-          li.append(a);
+          a.rel = "noopener noreferrer";
+          a.setAttribute("aria-label", `ORCID profile for ${name}`);
+          a.innerHTML = `${makeOrcidIconSVG()}<span>${orcid}</span>`;
+
+          li.appendChild(a);
         }
-        ul.append(li);
+
+        ul.appendChild(li);
       });
     } catch (e) {
       const err = document.getElementById("contributors-error");
