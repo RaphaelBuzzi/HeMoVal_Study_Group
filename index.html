@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HeMoVal study: a prospective international multicenter cohort study investigating haemoglobin metabolites in cerebrospinal fluid after aneurysmal subarachnoid haemorrhage." />
+  <title>The HeMoVal study</title>
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --fg:#111111;
+      --muted:#666666;
+      --line:#e8e8e8;
+      --max:980px;
+    }
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; }
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--fg);
+      line-height:1.55;
+    }
+    a{ color:inherit; text-decoration:underline; text-underline-offset:2px; }
+    a:hover{ text-decoration-thickness:2px; }
+
+    header{
+      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      background:rgba(255,255,255,0.95);
+    }
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .brand{
+      font-weight:650;
+      letter-spacing:0.2px;
+      text-decoration:none;
+    }
+    nav ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    nav a{
+      text-decoration:none;
+      padding:6px 8px;
+      border-radius:8px;
+    }
+    nav a:hover{ background:#f4f4f4; }
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:28px 18px;
+    }
+
+    .kicker{
+      font-size:13px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+    }
+
+    /* ↓ Main title slightly smaller */
+    h1{
+      font-size:30px;
+      line-height:1.2;
+      margin:10px 0 14px;
+      max-width:85ch;
+    }
+
+    /* ↓ Lead text same size as other text */
+    .lead{
+      font-size:16px;
+      color:var(--muted);
+      max-width:85ch;
+      margin:0;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:18px;
+      margin:28px 0 12px;
+    }
+    .card{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+    }
+    .card h2{
+      font-size:16px;
+      margin:0 0 8px;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+    }
+    .span-4{ grid-column: span 4; }
+
+    .section{
+      padding:18px 0;
+      border-top:1px solid var(--line);
+    }
+    .section h2{
+      font-size:18px;
+      margin:0 0 10px;
+    }
+    .section p{
+      margin:0 0 10px;
+      color:var(--muted);
+      max-width:85ch;
+    }
+    .section ul{
+      margin:10px 0 0 18px;
+      color:var(--muted);
+    }
+
+    figure{
+      margin:24px auto 0;
+      max-width:100%;
+      text-align:center;
+    }
+    figure img{
+      max-width:100%;
+      height:auto;
+      border:1px solid var(--line);
+      border-radius:6px;
+    }
+    figcaption{
+      margin-top:8px;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    @media (max-width: 860px){
+      h1{ font-size:26px; }
+      .span-4{ grid-column: span 12; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="#top">HeMoVal</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#contributors">Contributors</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+  <section>
+    <div class="kicker">HeMoVal Research Group</div>
+    <h1>
+      The HeMoVal study: a prospective international multicenter cohort study
+      investigating haemoglobin metabolites in cerebrospinal fluid and secondary
+      brain injury after aneurysmal subarachnoid haemorrhage
+    </h1>
+    <p class="lead">
+      HeMoVal is a multicentre research initiative originally designed to investigate longitudinal cerebrospinal fluid haemoglobin after aneurysmal subarachnoid haemorrhage, and to evaluate its association with secondary brain injury and clinical outcome.
+    </p>
+  </section>
+
+  <section class="grid">
+    <div class="card span-4">
+      <h2>Prospective design</h2>
+      <p>Observational cohort with preregistered endpoints.</p>
+    </div>
+    <div class="card span-4">
+      <h2>Longitudinal CSF sampling</h2>
+      <p>Daily cerebrospinal fluid sampling across the early high-risk period.</p>
+    </div>
+    <div class="card span-4">
+      <h2>Multicenter validation</h2>
+      <p>Designed to assess robustness across independent centres.</p>
+    </div>
+  </section>
+
+  <!-- Temporal CSF course image -->
+  <figure>
+    <img src="CSF_temporal_course_fotos.jpg"
+         alt="Temporal course of cerebrospinal fluid sampling across the early phase after aneurysmal subarachnoid haemorrhage">
+    <figcaption>
+      Temporal course of cerebrospinal fluid sampling during the early high-risk period after aneurysmal subarachnoid haemorrhage.
+    </figcaption>
+  </figure>
+
+  <section id="research" class="section">
+    <h2>Research focus</h2>
+    <p>
+      Following aneurysmal subarachnoid haemorrhage, haemoglobin released into the cerebrospinal fluid undergoes dynamic biochemical transformation over time. Substantial preclinical evidence supports cerebrospinal fluid haemoglobin as a key mediator in the development of secondary brain injury, through mechanisms including oxidative stress, nitric oxide scavenging, and downstream microvascular dysfunction. HeMoVal examines these haemoglobin-related processes using longitudinal biomarker measurements aligned with clinically defined secondary brain injury.
+    </p>
+    <ul>
+      <li>Longitudinal profiling of CSF haemoglobin species and oxidative conversion products</li>
+      <li>Temporal alignment of biomarker trajectories with daily clinical assessment of secondary brain injury</li>
+      <li>Multicentre validation to strengthen reproducibility beyond single-centre signal discovery</li>
+    </ul>
+
+    <!-- Mechanistic background figure -->
+    <figure>
+      <img src="mechanistical_background.png"
+           alt="Mechanistic background linking subarachnoid haemorrhage, haemoglobin delocalization, nitric oxide depletion, and secondary brain injury">
+      <figcaption>
+        Mechanistic background of haemoglobin driven pathophysiology after aneurysmal subarachnoid haemorrhage,
+        illustrating erythrolysis, delocalizationhaemoglobin delocalization, heme release, nitric oxide depletion,
+        and downstream pathways contributing to secondary brain injury.
+        Adapted from: <a href="https://doi.org/10.1186/s12883-022-02789-w">https://doi.org/10.1186/s12883-022-02789-w</a>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section id="resources" class="section">
+    <h2>Key resources</h2>
+    <ul>
+      <li>
+        <strong>Study protocol:</strong>
+        <a href="https://doi.org/10.1186/s12883-022-02789-w">
+          https://doi.org/10.1186/s12883-022-02789-w
+        </a>
+      </li>
+    </ul>
+    <p class="small">
+      Institutional affiliations and participating centres are maintained via ROR records.
+    </p>
+  </section>
+
+  <section id="contributors" class="section">
+    <h2>Contributors</h2>
+    <p class="small">Loaded from a machine-readable CSV.</p>
+    <ul id="contributors-list"></ul>
+    <p class="small" id="contributors-error" style="display:none;"></p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div style="padding:18px 0 28px;">
+    © <span id="y"></span> HeMoVal Research Group
+  </div>
+</footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+
+  async function loadContributorsCSV(url) {
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error(`Failed to fetch ${url}`);
+    return await res.text();
+  }
+
+  function parseCSV(text) {
+    const rows = [];
+    let row = [], field = "", inQuotes = false;
+
+    for (let i = 0; i < text.length; i++) {
+      const c = text[i], n = text[i+1];
+      if (c === '"') {
+        if (inQuotes && n === '"') { field += '"'; i++; }
+        else inQuotes = !inQuotes;
+      } else if (c === "," && !inQuotes) {
+        row.push(field); field = "";
+      } else if ((c === "\n" || c === "\r") && !inQuotes) {
+        if (c === "\r" && n === "\n") i++;
+        row.push(field); field = "";
+        if (row.some(v => v.trim())) rows.push(row);
+        row = [];
+      } else {
+        field += c;
+      }
+    }
+    row.push(field);
+    if (row.some(v => v.trim())) rows.push(row);
+    return rows;
+  }
+
+  function normalizeOrcid(s) {
+    const m = (s||"").match(/(\d{4}-\d{4}-\d{4}-\d{3}[\dX])/);
+    return m ? m[1] : "";
+  }
+
+  (async () => {
+    try {
+      const text = await loadContributorsCSV("contributors.csv");
+      const rows = parseCSV(text);
+      const header = rows[0].map(h => h.trim().toLowerCase());
+      const idx = {
+        name: header.indexOf("name"),
+        orcid: header.indexOf("orcid"),
+        role: header.indexOf("role")
+      };
+
+      const ul = document.getElementById("contributors-list");
+
+      rows.slice(1).forEach(r => {
+        const li = document.createElement("li");
+        const name = r[idx.name]?.trim() || "—";
+        const role = r[idx.role]?.trim();
+        const orcid = normalizeOrcid(r[idx.orcid]);
+
+        li.append(`${name}${role ? " — " + role : ""}`);
+        if (orcid) {
+          li.append(" — ");
+          const a = document.createElement("a");
+          a.href = `https://orcid.org/${orcid}`;
+          a.textContent = `ORCID: ${orcid}`;
+          a.target = "_blank";
+          li.append(a);
+        }
+        ul.append(li);
+      });
+    } catch (e) {
+      const err = document.getElementById("contributors-error");
+      err.style.display = "block";
+      err.textContent = "Could not load contributors.";
+    }
+  })();
+</script>
+</body>
+</html>
