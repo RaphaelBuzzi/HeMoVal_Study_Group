@@ -81,7 +81,6 @@
       max-width:85ch;
     }
 
-    /* Lead text same size as other text */
     .lead{
       font-size:16px;
       color:var(--muted);
@@ -201,6 +200,15 @@
         width: 100%;
         justify-content: flex-start;
         gap: 10px;
+      }
+    }
+    html{
+      scroll-padding-top: 50px;
+    }
+
+    @media (max-width: 600px){
+      html{
+        scroll-padding-top: 80px;
       }
     }
   </style>
