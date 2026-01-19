@@ -1,22 +1,29 @@
-﻿name,orcid
-Kevin Akeret,0000-0002-5946-4999
-Linda Bättig,0009-0005-3146-4646
-Kathrin S. Bieri,0009-0008-8966-6816
-Raphael M. Buzzi,0000-0002-9584-3590
-Canzanella-Boillat,0000-0002-4492-2002
-Daniel Couto,0000-0003-0223-1497
-Thomas Gentinetta,0009-0004-9470-9877
-Alexandra Grob,0000-0002-0850-783X
-Basil E. Gruter,0000-0002-6314-2482
-Joshua Haegler,0000-0003-3915-3322
-Ulrike Held,0000-0003-3105-5840
-Muriel Helmers,0009-0008-8608-1230
-Yasin Irmak,0009-0005-9664-6299
-Emanuela Keller,0000-0002-7560-7574
-Constantin Roder,0000-0003-4487-2807
-Karl Roessler,0000-0002-9249-8082
-Moritz Saxenhofer,0000-0002-5995-5026
-Julia Shawarba,0000-0001-6931-9149
-Bart R. Thomson,0000-0002-3073-9821
-Dominik J. Schaer,0000-0002-6468-4013
-Michael Hugelshofer,0000-0002-3057-0472
+﻿family_name,name,orcid
+Buzzi,Raphael M. Buzzi,0000-0002-9584-3590
+Roder,Constantin Roder,0000-0003-4487-2807
+Irmak,Yasin Irmak,0009-0005-9664-6299
+Held,Ulrike Held,0000-0003-3105-5840
+Couto,Daniel Couto,0000-0003-0223-1497
+Keller,Emanuela Keller,0000-0002-7560-7574
+Saxenhofer,Moritz Saxenhofer,0000-0002-5995-5026
+Grob,Alexandra Grob,0000-0002-0850-783X
+Gentinetta,Thomas Gentinetta,0009-0004-9470-9877
+Hägler,Joshua Haegler,0000-0003-3915-3322
+Thomson,Bart Robert Thomson,0000-0002-3073-9821
+Bättig,Linda Bättig,0009-0005-3146-4646
+Akeret,Kevin Akeret,0000-0002-5946-4999
+Shawarba,"Julia Shawarba, MD",0000-0001-6931-9149
+Grüter,Basil E. Grüter,0000-0002-6314-2482
+Bieri,Kathrin Susann Bieri,0009-0008-8966-6816
+Roessler,Karl Roessler,0000-0002-9249-8082
+Canzanella,Gwendoline Canzanella-Boillat,0000-0002-4492-2002
+Helmers,Muriel Helmers,0009-0008-8608-1230
+Schaer,Dominik J. Schaer,0000-0002-6468-4013
+Hugelshofer,Michael Hugelshofer,0000-0002-3057-0472
+Kronthaler,David Kronthaler,0009-0004-9778-0249
+Gruber,Andreas Gruber,0000-0002-0102-1765
+Wiggenhauser,Lucas Moritz Wiggenhauser,0000-0002-5934-8365
+Wostrack,Maria Wostrack,0000-0001-6439-3665
+Albrecht,Carolin Albrecht,0009-0004-8148-1033
+Abdulazim,Amr Abdulazim,0000-0003-0931-1633
+Colombo,"Elisa Colombo, MD",0000-0003-0424-1250
