@@ -377,6 +377,8 @@
         orcid: header.indexOf("orcid")
       };
 
+      const ul = document.getElementById("contributors-list");
+
       const data = rows.slice(1).sort((a,b) => {
         const fa = (a[idx.family_name] || "").toLowerCase();
         const fb = (b[idx.family_name] || "").toLowerCase();
