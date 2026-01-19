@@ -373,17 +373,14 @@
       const header = rows[0].map(h => h.trim().toLowerCase());
       const idx = {
         name: header.indexOf("name"),
+        family_name: header.indexOf("family_name"),
         orcid: header.indexOf("orcid")
-        // role intentionally ignored
       };
 
-      const ul = document.getElementById("contributors-list");
-
-      // Keep alphabetical sorting (remove this sort if you prefer CSV order)
       const data = rows.slice(1).sort((a,b) => {
-        const na = (a[idx.name] || "").toLowerCase();
-        const nb = (b[idx.name] || "").toLowerCase();
-        return na.localeCompare(nb);
+        const fa = (a[idx.family_name] || "").toLowerCase();
+        const fb = (b[idx.family_name] || "").toLowerCase();
+        return fa.localeCompare(fb);
       });
 
       data.forEach(r => {
